@@ -12,4 +12,4 @@ export const experienciasSchema = new Schema<experienciasInterface>({
     description: String
 })
 
-export const experienciasofDB = model<experienciasInterface>('experiencias',experienciasSchema)
+export const experienciasofDB = model<experienciasInterface>('experiencias',experienciasSchema) 

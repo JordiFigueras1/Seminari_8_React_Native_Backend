@@ -10,6 +10,18 @@ router.get('/', async(_req, res) => {
     return res.json(data);
 })
 
+router.get('/search/:query', async (req, res) => {
+    try {
+        const query = req.params.query;
+        const users = await userServices.getEntries.searchByNameOrMail(query);
+        return res.json(users);
+    } catch (error) {
+        console.error("Error en búsqueda de usuarios:", error);
+        return res.status(500).json({ error: "Error interno del servidor" });
+    }
+});
+
+
 router.get('/:id', async(req, res) => {
     const data = await userServices.getEntries.findById(req.params.id)
     return res.json(data);

@@ -40,7 +40,8 @@ const toNewUser = (object:any): newUserInfo => {
         name:parseName(object.name),
         mail:parseMail(object.mail),
         password:parsePassword(object.password),
-        comment:parseComment(object.comment)
+        comment:parseComment(object.comment),
+        experiencies: [] // Inicializa el array vacío por defecto
     }
     return newUser
 }
